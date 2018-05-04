@@ -1,11 +1,18 @@
 # Influential Vocabulary Detection
 This tool can be used to find the most influential words on a document. We define _most influential_ as the words that influence a trained classifier the most to give it a particular classification.
 
+We use a Convolutional Neural Network model, as suggested by Keras and others, that can classify IMDB and Wikileaks documents with the following accuracies (50/50 train/test split):
+
+| Dataset       | Training | Testing |
+| ------------- |:--------:|:-------:|
+| IMDB          |      84% |     83% |
+| Wikileaks     |      99% |     99% |
+
 ## Dependencies
 To use this tool, you must have Keras installed with a TensorFlow backend.
-1. To install TensorFlow, follow these instructions: https://www.tensorflow.org/install/
-2. To install Keras, follow these instructions: https://keras.io/#installation
-3. To install NLTK, follow these instructions: https://www.nltk.org/install.html 
+1. To install **TensorFlow**, follow these instructions: https://www.tensorflow.org/install/
+2. To install **Keras**, follow these instructions: https://keras.io/#installation
+3. To install **NLTK**, follow these instructions: https://www.nltk.org/install.html 
 
 NLTK will prompt you to download stopwords and WordNetLemmatizer. To do so, run these commands on a python interpreter:
 ```python
@@ -13,27 +20,41 @@ NLTK will prompt you to download stopwords and WordNetLemmatizer. To do so, run 
 >>> nltk.download('stopwords')
 >>> nltk.download('wordnet')
 ```
-4. To install Numpy, follow these instructions: https://www.scipy.org/install.html
-5. To install TQDM, follow these instructions: https://github.com/tqdm/tqdm#installation
-6. To install Scikit-Learn, follow these instructions: http://scikit-learn.org/stable/install.html
+4. To install **Numpy**, follow these instructions: https://www.scipy.org/install.html
+5. To install **TQDM**, follow these instructions: https://github.com/tqdm/tqdm#installation
+6. To install **Scikit-Learn**, follow these instructions: http://scikit-learn.org/stable/install.html
 
 
 ## Usage
-1. If you have a dataset of documents encoded by vocabulary index and a matching label for each document (sample file: [dataset file]), then you can proceed to use this script:
-[code]
+1. If you have a dataset of documents encoded by vocabulary index and a matching label for each document (sample file: `dataset file`), then you can proceed to use this script:
+```bash
+python script_1.py
+```
 
 2. If you have a dataset of raw documents and with corresponding labels, then you can use this script:
-[code]
+```bash
+python script_2.py
+```
 
 3. For the IMDB dataset test, use this:
-[code]
+```bash
+python imdb.py
+```
 
 4. For the Wikileaks dataset test, follow these instructions:
 ⋅⋅1. Download the cables.csv files from the Internet Archive, and then place it inside of the _dataset/_ folder.
-⋅⋅2. 
+⋅⋅2. The file will be very large, so be aware of that. To be able to use our provided scripts in _dataset/wikileaks/_, you will have to remove the 
+
+5. For a new project, refer to one of the existing scripts and modify it accordingly. If you have any issues, please submit an issue above.
   
 
 ## Sample Output
+
+
+## List of Improvements and Changes
+- [x] Finish README.md
+
+If you would like more functionality to be added or find any bugs, please submit an issue on this page. Thank you!
 
 
 

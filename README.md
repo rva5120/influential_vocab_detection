@@ -12,8 +12,30 @@ To use this tool, you must have Keras installed with a TensorFlow backend.
     import nltk
     nltk.download('stopwords')
     nltk.download('wordnet')
+4. To install Numpy, follow these instructions: https://www.scipy.org/install.html
+5. To install TQDM, follow these instructions: https://github.com/tqdm/tqdm#installation
+6. To install Scikit-Learn, follow these instructions: http://scikit-learn.org/stable/install.html
 
-- Usage Details
+
+- Usage
+1. If you have a dataset of documents encoded by vocabulary index and a matching label for each document (sample file: [dataset file]), then you can proceed to use this script:
+[code]
+
+2. If you have a dataset of raw documents and with corresponding labels, then you can use this script:
+[code]
+
+3. For the IMDB dataset test, use this:
+[code]
+
+4. For the Wikileaks dataset test, follow these instructions:
+  1. Download the cables.csv files from the Internet Archive, and then place it inside of the _dataset/_ folder.
+  2. 
+  
+
+- Sample Output
+
+
+
 There are several tools inside of this repository:
 1. Inside of the _dataset/_ folder, you will find 2 scripts:
   - fix_25k.py: this script takes in the Wikileaks cables.csv file, and it extracts the document and its original classification. It also builds a vocabulary. This needs to be moved...

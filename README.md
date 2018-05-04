@@ -26,26 +26,26 @@ NLTK will prompt you to download stopwords and WordNetLemmatizer. To do so, run 
 
 
 ## Usage
-1. If you have a dataset of documents encoded by vocabulary index and a matching label for each document (sample file: `dataset file`), then you can proceed to use this script:
+1. If you have a _dataset of documents encoded by vocabulary index and a matching label for each document_ (sample file: `dataset file`), then you can proceed to use this script:
 ```bash
 python script_1.py
 ```
 
-2. If you have a dataset of raw documents and with corresponding labels, then you can use this script:
+2. If you have a _dataset of raw documents and with corresponding labels_, then you can use this script:
 ```bash
 python script_2.py
 ```
 
-3. For the IMDB dataset test, use this:
+3. For the _IMDB dataset test_, use this:
 ```bash
 python imdb.py
 ```
 
-4. For the Wikileaks dataset test, follow these instructions:
+4. For the _Wikileaks dataset test_, follow these instructions:
 ⋅⋅1. Download the cables.csv files from the Internet Archive, and then place it inside of the _dataset/_ folder.
 ⋅⋅2. The file will be very large, so be aware of that. To be able to use our provided scripts in _dataset/wikileaks/_, you will have to remove the 
 
-5. For a new project, refer to one of the existing scripts and modify it accordingly. If you have any issues, please submit an issue above.
+5. For a _new project_, refer to one of the existing scripts and modify it accordingly. If you have any issues, _please submit an issue above_.
   
 
 ## Sample Output

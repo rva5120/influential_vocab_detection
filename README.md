@@ -57,8 +57,9 @@ python imdb.py
 If you would like more functionality to be added or find any bugs, please submit an issue on this page. Thank you!
 
 
-
+```
 There are several tools inside of this repository:
 1. Inside of the _dataset/_ folder, you will find 2 scripts:
   - fix_25k.py: this script takes in the Wikileaks cables.csv file, and it extracts the document and its original classification. It also builds a vocabulary. This needs to be moved...
   - dataset_vars.py
+```

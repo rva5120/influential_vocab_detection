@@ -42,8 +42,8 @@ python imdb.py
 ```
 
 4. For the _Wikileaks dataset test_, follow these instructions:
-⋅⋅1. Download the cables.csv files from the Internet Archive, and then place it inside of the _dataset/_ folder.
-⋅⋅2. The file will be very large, so be aware of that. To be able to use our provided scripts in _dataset/wikileaks/_, you will have to remove the 
+   1. Download the cables.csv files from the Internet Archive, and then place it inside of the _dataset/_ folder.
+   2. The file will be very large, so be aware of that. To be able to use our provided scripts in _dataset/wikileaks/_, you will have to remove the 
 
 5. For a _new project_, refer to one of the existing scripts and modify it accordingly. If you have any issues, _please submit an issue above_.
   

@@ -37,7 +37,7 @@ python imdb.py
 ```
 
 3. For the _Wikileaks dataset test_, follow these instructions:
-   1. To use the pre-trained model, open the `wikileaks_model.py` script and set `model_exists = True` in the Parameters section.
+   1. To use the pre-trained model, open the `wikileaks.py` script and set `model_exists = True` in the Parameters section.
    2. To run the test from the raw cables.csv file, follow these steps:
       1. Download the cables.csv file from the Internet Archive, and then place it inside of the _dataset/wikileaks/_ folder.
          1. For unclassified and confidential documents, run the bash script in _dataset/wikileaks/**2-way**/prepare_dataset.sh_:
@@ -45,7 +45,10 @@ python imdb.py
          ./prepare_dataset.sh
          ```
          2. For unclassified, confidential and secret documents (with an unbalanced secret class), run the bash script in _dataset/wikileaks/**3-way**/prepare_dataset.sh_.
-   3. Once the dataset has been prepared, you may run `wikileaks_model.py` with `model_exists = False` set in the Parameters section.
+   3. Once the dataset has been prepared, you may run `wikileaks.py` with `model_exists = False` set in the Parameters section.
+   ```bash
+   python wikileaks.py
+   ```
 
 4. For a _new project_, refer to one of the existing scripts and modify it accordingly. If you have any requests or problems, _please submit an issue above_.
   

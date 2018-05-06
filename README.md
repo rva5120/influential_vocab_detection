@@ -3,10 +3,11 @@ This tool can be used to find the most influential words on a document. We defin
 
 We use a Convolutional Neural Network model, as suggested by Keras and others, that can classify IMDB and Wikileaks documents with the following accuracies (50/50 train/test split):
 
-| Dataset       | Training | Testing |
-| ------------- |:--------:|:-------:|
-| IMDB          |      84% |     83% |
-| Wikileaks     |      99% |     99% |
+| Dataset            | Training | Testing |
+| -------------------|:--------:|:-------:|
+| IMDB               |      84% |     83% |
+| Wikileaks (2-way)  |      99% |     99% |
+| Wikileaks (3-way)  |      ??% |     ??% | 
 
 ## Dependencies
 To use this tool, you must have Keras installed with a TensorFlow backend.

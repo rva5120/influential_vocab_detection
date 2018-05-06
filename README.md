@@ -26,6 +26,7 @@ NLTK will prompt you to download stopwords and WordNetLemmatizer. To do so, run 
 
 
 ## Usage
+### Running the scripts
 1. If you have a _dataset of raw documents and with corresponding labels_, then you can use this script:
 ```bash
 python custom_dataset.py
@@ -51,11 +52,12 @@ python imdb.py
    ```
 
 4. For a _new project_, refer to one of the existing scripts and modify it accordingly. If you have any requests or problems, _please submit an issue above_.
-  
+
 
 ## Sample Output
 Below is the output after running the IMDB test:
 ...img...
+
 
 ## List of Improvements and Changes
 - [x] Finish README.md

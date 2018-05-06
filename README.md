@@ -28,7 +28,7 @@ NLTK will prompt you to download stopwords and WordNetLemmatizer. To do so, run 
 ## Usage
 1. If you have a _dataset of raw documents and with corresponding labels_, then you can use this script:
 ```bash
-python script_2.py
+python custom_dataset.py
 ```
 
 2. For the _IMDB dataset test_, use this:
@@ -40,8 +40,11 @@ python imdb.py
    1. To use the pre-trained model, open the `wikileaks_model.py` script and set `model_exists = True` in the Parameters section.
    2. To run the test from the raw cables.csv file, follow these steps:
       1. Download the cables.csv file from the Internet Archive, and then place it inside of the _dataset/wikileaks/_ folder.
-         1. For unclassified and confidential documents, run the bash script in _dataset/wikileaks/2-way/prepare_dataset.sh_.
-         2. For unclassified, confidential and secret documents (with an unbalanced secret class), run the bash script in _dataset/wikileaks/3-way/prepare_dataset.sh_.
+         1. For unclassified and confidential documents, run the bash script in _dataset/wikileaks/**2-way**/prepare_dataset.sh_:
+         ```bash
+         ./prepare_dataset.sh
+         ```
+         2. For unclassified, confidential and secret documents (with an unbalanced secret class), run the bash script in _dataset/wikileaks/**3-way**/prepare_dataset.sh_.
 
 4. For a _new project_, refer to one of the existing scripts and modify it accordingly. If you have any requests or problems, _please submit an issue above_.
   

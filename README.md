@@ -45,6 +45,7 @@ python imdb.py
          ./prepare_dataset.sh
          ```
          2. For unclassified, confidential and secret documents (with an unbalanced secret class), run the bash script in _dataset/wikileaks/**3-way**/prepare_dataset.sh_.
+   3. Once the dataset has been prepared, you may run `wikileaks_model.py` with `model_exists = False` set in the Parameters section.
 
 4. For a _new project_, refer to one of the existing scripts and modify it accordingly. If you have any requests or problems, _please submit an issue above_.
   

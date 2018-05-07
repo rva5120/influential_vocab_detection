@@ -9,6 +9,7 @@ We use a Convolutional Neural Network model, as suggested by Keras and others, t
 | Wikileaks (2-way)           | 25K unclassified, 25K classified documents             |               99% |              99% |
 | Wikileaks (3-way imbalanced)| 25K unclassified, 25K classified, 12K secret documents |               85% |              86% |
 
+Computation of Influential Words, sampling 100 documents per class: ~11:34-11:
 
 ## Dependencies
 To use this tool, you must have Keras installed with a TensorFlow backend.
@@ -53,12 +54,11 @@ python imdb.py
          2. For unclassified, confidential and secret documents (with an unbalanced secret class: 25K unclassified, 25K classified, 12K secret), run the bash script in _dataset/wikileaks/**3-way**/prepare_dataset.sh_.
       2. Once the dataset has been prepared, you may run `wikileaks.py` as described in 1 and 2.
 
-4. For a _new project_, refer to one of the existing scripts and modify it accordingly. If you have any requests or problems, _please submit an issue above with your dataset details and needs_.
+4. For a _new project_, refer to one of the existing scripts and modify it accordingly. Things to keep in mind for new datasets:
+   1. The scrips expect the data to be organized in two numpy arrays of samples, X, and labels, y. The samples are arrays of word indices. For example, a sample review would be [1, 3, 400, 83, ..., 5]. And labels are class indices, for example, [3].
+   2. To handle other requirements that are not unclassified (class 0), confidential (class 1) and secret (class 2): refer to _utils/influential_vocab.py_ to set the target class according to your dataset.
 
-
-## Sample Output
-Below is the output after running the IMDB test:
-...img...
+If you have any requests or problems, _please submit an issue above with your dataset details and needs_.
 
 
 ## Handling Unbalanced Datasets with Class Weights
@@ -71,5 +71,6 @@ python wikileaks.py --num-classes 3 --pre-trained False --use-class-weights True
 
 ## List of Improvements and Changes
 - [x] Finish README.md
+- [ ] Finish IMDB script
 
 If you would like more functionality to be added or find any bugs, please submit an issue on this page. Thank you!

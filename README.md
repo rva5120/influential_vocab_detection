@@ -3,11 +3,11 @@ This tool can be used to find the most influential words on a document. We defin
 
 We use a Convolutional Neural Network model, as suggested by Keras and others, that can classify IMDB and Wikileaks documents with the following accuracies (50/50 train/test split):
 
-| Dataset                     | Training | Testing |
-| ----------------------------|:--------:|:-------:|
-| IMDB                        |      84% |     83% |
-| Wikileaks (2-way)           |      99% |     99% |
-| Wikileaks (3-way imbalanced)|      ??% |     ??% | 
+| Dataset                     | Training | Testing | Dataset Size                                           |
+| ----------------------------|:--------:|:-------:|:------------------------------------------------------:|
+| IMDB                        |      84% |     83% | 25K positive, 25K negative reviews ????                |
+| Wikileaks (2-way)           |      99% |     99% | 25K unclassified, 25K classified documents             |
+| Wikileaks (3-way imbalanced)|      85% |     86% | 25K unclassified, 25K classified, 12K secret documents |
 
 ## Dependencies
 To use this tool, you must have Keras installed with a TensorFlow backend.
@@ -27,37 +27,46 @@ NLTK will prompt you to download stopwords and WordNetLemmatizer. To do so, run 
 
 
 ## Usage
-1. If you have a _dataset of raw documents and with corresponding labels_, then you can use this script:
-```bash
-python custom_dataset.py
-```
-
-2. For the _IMDB dataset test_, use this:
+1. For the _IMDB dataset test_, use this:
 ```bash
 python imdb.py
 ```
 
-3. For the _Wikileaks dataset test_, follow these instructions:
-   1. To use the pre-trained model, open the `wikileaks.py` script and set `model_exists = True` in the Parameters section.
-   2. To run the test from the raw cables.csv file, follow these steps:
+2. For the _Wikileaks dataset test_, follow these instructions:
+   1. To use the pre-trained model for 2-way classification, run:
+   ```bash
+   python wikileaks.py
+   ```
+   
+   2. To use the pre-trained model for 3-way classification, run:
+   ```bash
+   python wikileaks.py --num-classes 3
+   ```
+   
+   3. To run the test from the raw cables.csv file, follow these steps:
       1. Download the cables.csv file from the Internet Archive, and then place it inside of the _dataset/wikileaks/_ folder.
          1. For unclassified and confidential documents, run the bash script in _dataset/wikileaks/**2-way**/prepare_dataset.sh_:
          ```bash
          ./prepare_dataset.sh
          ```
-         2. For unclassified, confidential and secret documents (with an unbalanced secret class), run the bash script in _dataset/wikileaks/**3-way**/prepare_dataset.sh_.
-   3. Once the dataset has been prepared, you may run `wikileaks.py` with `model_exists = False` set in the Parameters section.
-   ```bash
-   python wikileaks.py
-   ```
+         2. For unclassified, confidential and secret documents (with an unbalanced secret class: 25K unclassified, 25K classified, 12K secret), run the bash script in _dataset/wikileaks/**3-way**/prepare_dataset.sh_.
+      2. Once the dataset has been prepared, you may run `wikileaks.py` as described in 1 and 2.
 
-4. For a _new project_, refer to one of the existing scripts and modify it accordingly. If you have any requests or problems, _please submit an issue above_.
+4. For a _new project_, refer to one of the existing scripts and modify it accordingly. If you have any requests or problems, _please submit an issue above with your dataset details and needs_.
 
 
 ## Sample Output
 Below is the output after running the IMDB test:
 ...img...
 
+
+## Handling Unbalanced Datasets with Class Weights
+Keras provides a functionality where one can assign class weights to resolve the issue of under-represented classes in the dataset. We provide the functionality in the code to do this, if desired. Be aware that the weights to be assigned to each class must be tuned accordingly.
+
+To use this functionality, the model will have to be created and trained from scratch, since the pre-trained was not prepared using class weights:
+```bash
+python wikileaks.py --num-classes 3 --pre-trained False --use-class-weights True
+```
 
 ## List of Improvements and Changes
 - [x] Finish README.md

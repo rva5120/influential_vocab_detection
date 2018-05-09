@@ -28,10 +28,7 @@ NLTK will prompt you to download stopwords and WordNetLemmatizer. To do so, run 
 
 
 ## Usage
-1. For the _IMDB dataset test_, use this:
-```bash
-python imdb.py
-```
+1. The _IMDB dataset test_ script is currently being fixed to be added here, but the wikileaks.py can be modified to work with Keras's IMDB dataset.
 
 2. For the _Wikileaks dataset test_, follow these instructions:
    1. To use the pre-trained model for 2-way classification, run:
@@ -70,6 +67,5 @@ python wikileaks.py --num-classes 3 --pre-trained False --use-class-weights True
 
 ## List of Improvements and Changes
 - [x] Finish README.md
-- [ ] Finish IMDB script
 
 If you would like more functionality to be added or find any bugs, please submit an issue on this page. Thank you!

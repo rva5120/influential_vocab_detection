@@ -19,15 +19,15 @@ def compute_gradients(model, target, adversarial_document):
 	loss_function = K.abs(model_output - target)	# -----> test with binary_cross loss (grad update?)
 	#loss_function = (-1)*(K.abs(K.round(model_output) - target)*K.log(model_output)) + ((1 - K.abs(K.round(model_output) - target))*K.log(1 - model_output))
 
-	print("Loss function def")
-	print(loss_function)
+	#print("Loss function def")
+	#print(loss_function)
 
 	# Gradients Function
 	grads_function = K.gradients(loss_function, model_input)[0]
 	grads_function_em = K.gradients(loss_function, model_embeddings)[0]
 
-	print("Grads function def")
-	print(grads_function)
+	#print("Grads function def")
+	#print(grads_function)
 
 	# Function to collect gradients and cost
 	pred_prob = K.function([model_input] + [K.learning_phase()], [model_output])
@@ -35,10 +35,10 @@ def compute_gradients(model, target, adversarial_document):
 	grads_em = K.function([model_input] + [K.learning_phase()], [grads_function_em])
 	loss = K.function([model_input] + [K.learning_phase()], [loss_function])
 
-	print("Loss, grads, pred_prob")
-	print(loss)
-	print(grads)
-	print(pred_prob)
+	#print("Loss, grads, pred_prob")
+	#print(loss)
+	#print(grads)
+	#print(pred_prob)
 
 	# Calculate class prob and gradients
 	prob = pred_prob([adversarial_document, 0])#[0][0][0]
@@ -46,13 +46,13 @@ def compute_gradients(model, target, adversarial_document):
 	gradients = grads([adversarial_document, 0])#[0][0]
 	gradients_em = grads_em([adversarial_document, 0])[0][0]
 
-	print("Prob, loss, gradients")
-	print(prob)
-	print(gradients)
-	print(loss_out)
-	print(gradients[0].shape)
+	#print("Prob, loss, gradients")
+	#print(prob)
+	#print(gradients)
+	#print(loss_out)
+	#print(gradients[0].shape)
 
-	exit()
+	#exit()
 
 	return gradients, gradients_em
 

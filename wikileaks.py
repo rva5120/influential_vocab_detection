@@ -283,8 +283,8 @@ else:
 #################################
 print("")
 print(colors.BOLD + colors.UNDERLINE + "Confusion Matrix" + colors.END)
-#conf_matrix = models.get_confusion_matrix(model, predict_generator, y_test)
-#print(conf_matrix)
+conf_matrix = models.get_confusion_matrix(model, predict_generator, y_test)
+print(conf_matrix)
 print("")
 
 

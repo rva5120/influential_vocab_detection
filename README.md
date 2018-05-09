@@ -6,8 +6,8 @@ We use a Convolutional Neural Network model, as suggested by Keras and others, t
 | Dataset                     | Dataset Class and Size Details                         | Training Accuracy | Testing Accuracy |
 |:----------------------------|:-------------------------------------------------------|:-----------------:|:----------------:|
 | IMDB                        | 25K positive, 25K negative reviews                     |               84% |              83% | 
-| Wikileaks (2-way)           | 25K unclassified, 25K classified documents             |               99% |              99% |
-| Wikileaks (3-way imbalanced)| 25K unclassified, 25K classified, 12K secret documents |               85% |              86% |
+| Wikileaks (2-way)           | 25K unclassified, 25K classified documents             |               95% |              95% |
+| Wikileaks (3-way imbalanced)| 25K unclassified, 25K classified, 12K secret documents |               81% |              80% |
 
 
 ## Dependencies
